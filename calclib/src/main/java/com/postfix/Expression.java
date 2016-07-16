@@ -25,7 +25,7 @@ public abstract class Expression {
 
     public abstract int infix2Result(String infix);
 
-    protected abstract void convertPostfix(String infix);
+    protected abstract String convertPostfix(String infix);
 
     /**
      * 预处理，负数补全0或者补全括号

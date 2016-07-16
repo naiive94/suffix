@@ -8,11 +8,11 @@ public class BinaryExpression extends Expression {
 
     @Override
     public int infix2Result(String infix) {
-        return 0;
+        return postfixArithmetic(convertPostfix(infix));
     }
 
     @Override
-    protected void convertPostfix(String infix) {
+    protected String convertPostfix(String infix) {
         if (!validInfix(infix)) {
             throw new IllegalArgumentException("input invalid");
         }
@@ -20,7 +20,7 @@ public class BinaryExpression extends Expression {
 
         //结合栈把数据放进二叉树，然后遍历二叉树得到后缀表达式
 
-
+        return null;
     }
 
     @Override

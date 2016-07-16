@@ -13,13 +13,11 @@ public class ShuntingExpression extends Expression {
     @Override
     public int infix2Result(String infix) {
 
-        convertPostfix(infix);
-
-        return postfixArithmetic(postfix.toString());
+        return postfixArithmetic(convertPostfix(infix));
     }
 
     @Override
-    protected void convertPostfix(String infix) {
+    protected String convertPostfix(String infix) {
         if (!validInfix(infix)) {
             throw new IllegalArgumentException("input invalid");
         }
@@ -73,6 +71,7 @@ public class ShuntingExpression extends Expression {
             postfix.append(" ");
             postfix.append(operatorStack.pop());
         }
+        return postfix.toString();
     }
 
 
