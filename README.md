@@ -1,5 +1,6 @@
 # suffix
-infix to suffix calculator
+分析四则运算表达式并计算的计算器。
+相关Java代码放在`calclib`库里。
 
 ##目标
 
