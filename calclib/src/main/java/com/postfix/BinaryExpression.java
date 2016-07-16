@@ -7,7 +7,7 @@ public class BinaryExpression extends Expression {
 
 
     @Override
-    public int infix2Result(String infix) {
+    public double infix2Result(String infix) {
         return postfixArithmetic(convertPostfix(infix));
     }
 

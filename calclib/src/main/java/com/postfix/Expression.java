@@ -23,7 +23,7 @@ import java.util.Stack;
  */
 public abstract class Expression {
 
-    public abstract int infix2Result(String infix);
+    public abstract double infix2Result(String infix);
 
     protected abstract String convertPostfix(String infix);
 
@@ -36,16 +36,16 @@ public abstract class Expression {
     public abstract String preprocess(String infix);
 
 
-    protected int postfixArithmetic(String postfix) {
-        Stack<Integer> stack = new Stack<>();
+    protected double postfixArithmetic(String postfix) {
+        Stack<Double> stack = new Stack<>();
         String[] array = postfix.split(" ");
         for (int i = 0; i < array.length; i++) {
             array[i].trim();
             if (Character.isDigit(array[i].charAt(0))) {
-                stack.push(Integer.valueOf(array[i]));
+                stack.push(Double.valueOf(array[i]));
             } else {
-                int y = stack.pop();
-                int x = stack.pop();
+                double y = stack.pop();
+                double x = stack.pop();
                 stack.push(calculate(x, y, array[i]));
             }
 
@@ -53,8 +53,8 @@ public abstract class Expression {
         return stack.pop();
     }
 
-    protected int calculate(int x, int y, String operator) {
-        int ret = 0;
+    protected double calculate(double x, double y, String operator) {
+        double ret = 0.0;
         switch (operator) {
             case "+":
                 ret = x + y;

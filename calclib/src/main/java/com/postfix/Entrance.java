@@ -6,12 +6,15 @@ package com.postfix;
 public class Entrance {
 
     public static void main(String[] args) {
-        String infix = "-(-1+23)*8-(9+3)/4";  //result -179
+        String infix = "-(-1+23)*8-(9+3)/4+5/20";
 
-        Expression expression = ExpressionFactory.createShuntingExp();
-        int result = expression.infix2Result(infix);
-
-        System.out.print(result + "");
+        try {
+            Expression expression = ExpressionFactory.createShuntingExp();
+            double result = expression.infix2Result(infix);
+            System.out.print(result + "");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 }

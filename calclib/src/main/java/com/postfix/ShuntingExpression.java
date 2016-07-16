@@ -11,7 +11,7 @@ public class ShuntingExpression extends Expression {
     private StringBuilder postfix = new StringBuilder();
 
     @Override
-    public int infix2Result(String infix) {
+    public double infix2Result(String infix) {
 
         return postfixArithmetic(convertPostfix(infix));
     }
